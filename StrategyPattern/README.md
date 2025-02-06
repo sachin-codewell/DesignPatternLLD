@@ -13,27 +13,30 @@ Let’s consider an example where we need to sort a list of numbers. Instead of 
 1. Strategy Interface:
 
 public interface SortingStrategy {
-    void sort(List<Integer> numbers);
+void sort(List<Integer> numbers);
 }
+
+
 2. Concrete Strategies:
 
 public class BubbleSortStrategy implements SortingStrategy {
-    @Override
-    public void sort(List<Integer> numbers) {
-        // Bubble sort logic
-    }
+@Override
+public void sort(List<Integer> numbers) {
+// Bubble sort logic
+}
 }
 
 public class QuickSortStrategy implements SortingStrategy {
-    @Override
-    public void sort(List<Integer> numbers) {
-        // Quick sort logic
-    }
+@Override
+public void sort(List<Integer> numbers) {
+// Quick sort logic
 }
+}
+
 3. Context Class:
 
 public class Sorter {
-    private SortingStrategy strategy;
+private SortingStrategy strategy;
 
     public Sorter(SortingStrategy strategy) {
         this.strategy = strategy;
@@ -47,12 +50,14 @@ public class Sorter {
         strategy.sort(numbers);
     }
 }
+
+
 4. Client Code:
 
 public class Main {
-    public static void main(String[] args) {
-        List<Integer> numbers = Arrays.asList(5, 3, 2, 8, 1);
-        
+public static void main(String[] args) {
+List<Integer> numbers = Arrays.asList(5, 3, 2, 8, 1);
+
         Sorter sorter = new Sorter(new BubbleSortStrategy());
         sorter.sortNumbers(numbers);
 
@@ -61,6 +66,8 @@ public class Main {
         sorter.sortNumbers(numbers);
     }
 }
+
+
 Benefits of Using the Strategy Pattern
 Flexibility and Reusability:
 By adhering to the Strategy pattern, algorithms can be changed or extended without modifying the existing client code. This flexibility promotes code reusability and reduces the risk of introducing bugs during modifications.
